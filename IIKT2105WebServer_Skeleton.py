@@ -33,9 +33,9 @@ while True:
         filename = request.split()[1]
         f = open(filename[1:])
         # Read the contents of the requested file into outputdata.
-        outputdata = f ## TODO fill in.
+        outputdata = f.read() ## TODO fill in.
         ## TODO fill in start.
-        header = "HTTP/1.1 200 \r\n\r\n"
+        header = "HTTP/1.1 200 OK \r\n\r\n Content-type: text/html\r\n\r\n"
         connectionSocket.send(header.encode())
         # Send the appropriate HTTP header line into the socket
         # The basic format is "HTTP/1.1 CORRECTHTTPCODE\r\n\r\n", replacing CORRECTHTTPCODE with the actual code.
@@ -50,7 +50,7 @@ while True:
         error = "404 page not found"
         connectionSocket.send(error.encode())
         ## TODO fill in end.
-    
+    finally:
     ## TODO fill in start.
-    connectionSocket.close()
+        connectionSocket.close()
     ## TODO fill in end.
