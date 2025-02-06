@@ -36,7 +36,7 @@ while True:
         outputdata = f ## TODO fill in.
         ## TODO fill in start.
         header = "HTTP/1.1 200 \r\n\r\n"
-        connectionSocket.send(header)
+        connectionSocket.send(header.encode())
         # Send the appropriate HTTP header line into the socket
         # The basic format is "HTTP/1.1 CORRECTHTTPCODE\r\n\r\n", replacing CORRECTHTTPCODE with the actual code.
         ## TODO fill in end.
