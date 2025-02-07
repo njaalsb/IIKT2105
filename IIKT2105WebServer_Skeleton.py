@@ -31,7 +31,7 @@ while True:
         # Note: the path is relative to the location of the server program, i.e., a request for 
         #       /index.html would attempt access the file index.html in the same folder as IIKT2105WebServer.py.
         filename = request.split()[1]
-        f = open(filename[1:])
+        f = open(filename[1:], encoding='utf-8-sig')
         # Read the contents of the requested file into outputdata.
         outputdata = f.read() ## TODO fill in.
         ## TODO fill in start.

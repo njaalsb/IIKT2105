@@ -14,9 +14,9 @@ clientSocket.connect((serverName,serverPort))
 url = "10.24.37.66:6789/HelloWorld.html"
 # r = requests.get(url)
 
-request = 'GET 10.24.37.66:6789/HelloWorld.html HTTP/1.1'
-clientSocket.send(requests.encode())
+GET_request = 'HTTP/1.1 GET 10.24.37.66:6789/HelloWorld.html\r\n\r\n'
+clientSocket.send(GET_request.encode())
 response = clientSocket.recv(1024)
 
-print ('From Server:', response.decode())
+print ('From Server:', response.decode())  
 clientSocket.close()
