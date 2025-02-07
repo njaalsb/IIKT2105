@@ -35,15 +35,17 @@ while True:
         # Read the contents of the requested file into outputdata.
         outputdata = f.read() ## TODO fill in.
         ## TODO fill in start.
-        header = "HTTP/1.1 200 OK \r\n\r\n Content-type: text/html\r\n\r\n"
+        header = "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n"
         connectionSocket.send(header.encode())
         # Send the appropriate HTTP header line into the socket
         # The basic format is "HTTP/1.1 CORRECTHTTPCODE\r\n\r\n", replacing CORRECTHTTPCODE with the actual code.
         ## TODO fill in end.
         # Send the content of the requested file to the client
+        '''
         for i in range(0, len(outputdata)):
             connectionSocket.send(outputdata[i].encode())
         connectionSocket.send("\r\n".encode())
+        '''
     # Handle IOError when the file is not available.
     except IOError:
         ## TODO fill in start.
