@@ -41,6 +41,7 @@ while True:
         # The basic format is "HTTP/1.1 CORRECTHTTPCODE\r\n\r\n", replacing CORRECTHTTPCODE with the actual code.
         ## TODO fill in end.
         # Send the content of the requested file to the client
+        connectionSocket.send(outputdata.encode())
         '''
         for i in range(0, len(outputdata)):
             connectionSocket.send(outputdata[i].encode())
